@@ -23,7 +23,7 @@
         "psr/log": "^3.0.0",
         "predis/predis": "^1.1",
         "ramsey/uuid": "^4.7.6",
-        "vierbergenlars/php-semver": "^3.0"
+        "composer/semver": "^3.4"
     },
     "suggest": {
         "ext-redis": "*"
