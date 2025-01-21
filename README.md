@@ -2,7 +2,6 @@
 PHP library to schedule jobs for the NodeJS [Bull Redis queue](https://github.com/OptimalBits/bull).
 
 ## Requirements
-* Laravel 11
 * PHP >= 8.2
 * PHP JSON extension
 * Redis >= 2.8.18
