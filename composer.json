@@ -1,5 +1,5 @@
 {
-    "name": "wahyurejeki/laravel-bull-ccheduler",
+    "name": "wahyurejeki/laravel-bull-scheduler",
     "description": "PHP library to schedule Redis jobs for the NodeJS Bull Redis queue",
     "type": "library",
     "license": "MIT",
