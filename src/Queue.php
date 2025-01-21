@@ -16,7 +16,7 @@ use Psr\Log\NullLogger;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\RandomSourceException;
 use Predis\Client as Redis;
-use Composer\SemVer\Comparator;
+use vierbergenlars\SemVer\version;
 
 class Queue {
   use LoggerAwareTrait;
@@ -72,7 +72,7 @@ class Queue {
 
     // Ensure minimum Redis version is met
     $version = $this->redis_version($this->redis->info());
-    if (!Comparator::greaterThanOrEqualTo($version, $this->MINIMUM_REDIS_VERSION))
+    if (!version::gte($version, $this->MINIMUM_REDIS_VERSION))
       throw new \RuntimeException(sprintf('Minimum Redis version (%s) not met. Reported Redis version: %s', $this->MINIMUM_REDIS_VERSION, $version));
 
     // Define addJob Lua script
