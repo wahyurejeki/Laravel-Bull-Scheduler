@@ -3,7 +3,7 @@
     "description": "PHP library to schedule Redis jobs for the NodeJS Bull Redis queue",
     "type": "library",
     "license": "MIT",
-    "keywords": ["php", "nodejs", "bull", "redis", "queue", "scheduler"],
+    "keywords": ["Laravel","php", "nodejs", "bull", "redis", "queue", "scheduler"],
     "support": {
         "issues": "https://github.com/wahyurejeki/Laravel-Bull-Scheduler/issues"
     },
