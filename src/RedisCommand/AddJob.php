@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HackThisSite\BullScheduler\RedisCommand;
+namespace WahyuRejeki\BullScheduler\RedisCommand;
 
 use Predis\Command\ScriptCommand;
 

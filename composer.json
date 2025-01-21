@@ -1,25 +1,29 @@
 {
-    "name": "hackthissite/php-bull-scheduler",
+    "name": "wahyurejeki/laravel-bull-ccheduler",
     "description": "PHP library to schedule Redis jobs for the NodeJS Bull Redis queue",
     "type": "library",
     "license": "MIT",
     "keywords": ["php", "nodejs", "bull", "redis", "queue", "scheduler"],
     "support": {
-        "issues": "https://github.com/hackthissite/php-bull-scheduler/issues"
+        "issues": "https://github.com/wahyurejeki/Laravel-Bull-Scheduler/issues"
     },
     "authors": [
         {
             "name": "HackThisSite",
             "email": "staff@hackthissite.org"
+        },
+        {
+            "name": "Wahyu Rejeki",
+            "email": "wahyurejeki61@gmail.com"
         }
     ],
     "require": {
-        "php": ">=5.5.0 || >=7.0",
+        "php": ">=8.2",
         "ext-json": "*",
-        "psr/log": "^1.1",
-        "predis/predis": "^1.1",
-        "ramsey/uuid": "^3.8",
-        "vierbergenlars/php-semver": "^3.0"
+        "psr/log": "^3.0.0",
+        "predis/predis": "^v2.3.0",
+        "ramsey/uuid": "^4.7.6",
+        "composer/semver": "^3.4.3"
     },
     "suggest": {
         "ext-redis": "*"
@@ -27,12 +31,12 @@
     "require-dev": {
         "ext-ctype": "*",
         "ext-phar": "*",
-        "phpunit/phpunit": "^4.8 || ^6.3",
-        "clean/phpdoc-md" : "^0.14"
+        "phpunit/phpunit": "^11.5.3",
+        "clean/phpdoc-md" : "^0.19.3"
     },
     "autoload": {
         "psr-4": {
-            "HackThisSite\\BullScheduler\\": "src"
+            "WahyuRejeki\\BullScheduler\\": "src"
         }
     }
 }

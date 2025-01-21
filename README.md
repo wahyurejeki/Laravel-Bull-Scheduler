@@ -2,22 +2,23 @@
 PHP library to schedule jobs for the NodeJS [Bull Redis queue](https://github.com/OptimalBits/bull).
 
 ## Requirements
-* PHP >= 5.5.0
+* Laravel 11
+* PHP >= 8.2
 * PHP JSON extension
 * Redis >= 2.8.18
 
 ## Installation
 Install via composer:
-`composer require hackthissite/php-bull-scheduler`
+`composer require wahyurejeki/laravel-bull-scheduler`
 
 ## Usage
-This library operates under the namspace `HackThisSite\BullScheduler` and uses [Predis](https://github.com/nrk/predis) under the hood.
+This library operates under the namspace `WahyuRejeki\BullScheduler` and uses [Predis](https://github.com/nrk/predis) under the hood.
 ```php
 <?php
 
 require_once 'vendor/autoload.php';
 
-use HackThisSite\BullScheduler\Queue;
+use WahyuRejeki\BullScheduler\Queue;
 
 // You can specify any value for Redis that Predis considers valid for the first parameter of Predis\Client
 $queue = new Queue('example queue', 'tcp://localhost:6379');

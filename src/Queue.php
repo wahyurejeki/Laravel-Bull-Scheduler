@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace HackThisSite\BullScheduler;
+namespace WahyuRejeki\BullScheduler;
 
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\NullLogger;
 use Ramsey\Uuid\Uuid;
-use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Ramsey\Uuid\Exception\RandomSourceException;
 use Predis\Client as Redis;
-use vierbergenlars\SemVer\version;
+use composer\SemVer\Comparator;
 
 class Queue {
   use LoggerAwareTrait;
@@ -51,7 +51,7 @@ class Queue {
     try {
       $uuid = Uuid::uuid4();
       $this->token = $uuid->toString();
-    } catch (UnsatisfiedDependencyException $e) {
+    } catch (RandomSourceException $e) {
       $msg = sprintf("Unable to generate UUID: %s\n", $e->getMessage());
       $this->logger->error($msg);
       die($msg);
@@ -72,11 +72,11 @@ class Queue {
 
     // Ensure minimum Redis version is met
     $version = $this->redis_version($this->redis->info());
-    if (!version::gte($version, $this->MINIMUM_REDIS_VERSION))
+    if (!Comparator::greaterThanOrEqualTo($version, $this->MINIMUM_REDIS_VERSION))
       throw new \RuntimeException(sprintf('Minimum Redis version (%s) not met. Reported Redis version: %s', $this->MINIMUM_REDIS_VERSION, $version));
 
     // Define addJob Lua script
-    $this->redis->getProfile()->defineCommand('addjob', 'HackThisSite\BullScheduler\RedisCommand\AddJob');
+    $this->redis->getProfile()->defineCommand('addjob', 'WahyuRejeki\BullScheduler\RedisCommand\AddJob');
   }
 
   public function add($name, $data = array(), $opts = array()) {
