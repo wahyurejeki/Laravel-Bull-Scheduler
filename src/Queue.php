@@ -16,7 +16,7 @@ use Psr\Log\NullLogger;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\Exception\RandomSourceException;
 use Predis\Client as Redis;
-use composer\SemVer\Comparator;
+use Composer\SemVer\Comparator;
 
 class Queue {
   use LoggerAwareTrait;
